@@ -50,6 +50,13 @@
     cursor: pointer;
   }
   
+  .overlay-button-5 {
+    position: absolute;
+    background-color: rgb(214, 143, 219);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
   
   .overlay-button-2 {
     position: absolute;
@@ -111,6 +118,11 @@
   .comment {
     text-align: left;
     margin-left: 20px;  /* Adjust the spacing as needed */
+  }
+
+  .dummy{
+    width: 80%;
+    height: auto;
   }
   
 

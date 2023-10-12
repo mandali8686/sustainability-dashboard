@@ -29,6 +29,9 @@ useEffect(() => {
   const goToCompost = () => {
     navigate('/compost_to_dining'); // Navigate to Electricity page
   };
+  const goToUniversity = () => {
+    navigate('/FCTUC'); // Navigate to Electricity page
+  };
 
 
   const handleCommentChange = (e) => {
@@ -82,6 +85,14 @@ useEffect(() => {
         >
           Dining to Food Consumption
         </button>
+        <button 
+          className="overlay-button-5" 
+          style={{ top: '62.5%', left: '56%' }} 
+          onClick={goToUniversity} // Set onClick to navigate
+        >
+          Food Consumption to University Constrol
+        </button>
+        
         
       </div>
       <div className="discussion-board">

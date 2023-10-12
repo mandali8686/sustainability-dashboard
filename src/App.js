@@ -5,6 +5,7 @@ import MainPage from './MainPage';  // Import the MainPage component
 import Electricity from './Electricity';  // Import the Electricity component
 import Dining from './Dining';
 import CompostToDining from './CompostToDining';
+import FCTUC from './FCTUC';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/electricity" element={<Electricity />} />
           <Route path="/dining" element={<Dining />} />
           <Route path="/compost_to_dining" element={<CompostToDining />} />
+          <Route path="/FCTUC" element={<FCTUC />} />
         </Routes>
       </div>
     </Router>
