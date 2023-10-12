@@ -1,0 +1,122 @@
+.App {
+    text-align: center;
+  }
+  
+  .image-container {
+    width: 80%;
+    margin: auto;
+  }
+  .sankey-link{
+    margin-bottom: 50px;
+  }
+  
+
+  .column-names {
+    width: 63%;
+    margin-left: 28%;  
+    margin-top: 60px;
+  }
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .sankey-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay-button-1 {
+    position: absolute;
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .overlay-button-3 {
+    position: absolute;
+    background-color: rgb(150, 138, 150);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .overlay-button-4 {
+    position: absolute;
+    background-color: rgb(211, 72, 72);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  
+  .overlay-button-2 {
+    position: absolute;
+    background-color: pink;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .column-names {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .column-names span {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;  /* Setting a unique font */
+  font-size: 24px;  /* Increasing the font size */
+  font-weight: bold;  /* Making text bold */
+  color: #007BFF;  /* Changing text color */
+  }
+  .header {
+    background-color: rgb(226, 224, 224);
+    padding: 5px;
+    text-align: left;
+    height: 50px;
+  }
+  
+  .logo {
+    max-height: 70px;  /* Limit the height */
+  width: auto;
+  height: auto;
+  }
+
+  .discussion-board {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .discussion-board textarea {
+    width: 80%;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 12px; /* Round corners */
+  }
+
+  .discussion-board button {
+    padding: 15px 30px; /* Increase padding to make it larger */
+    background-color: green; /* Set background color to green */
+    color: white; /* Set text color to white */
+    font-size: 16px; /* Increase font size */
+    border: none; /* Remove border */
+    cursor: pointer; /* Make it look clickable */
+  }
+  .comment {
+    text-align: left;
+    margin-left: 20px;  /* Adjust the spacing as needed */
+  }
+  
+
+  
+  
+  
+  
+  
+
