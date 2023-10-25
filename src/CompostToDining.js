@@ -3,7 +3,7 @@ import React from 'react';
 const CompostToDining = () => {
   return (
     <div>
-      <h1>Compost To Dining</h1>
+      <h1>Vanderbilt Compost</h1>
       <img className='recycling' src='recycling.png' alt='recycling'/>
       <div className='compost'>
         <h2>What is Compost/Recycling</h2>

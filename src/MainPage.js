@@ -12,43 +12,9 @@ const MainPage = () => {
 const maxCharCount = 1000; 
 const [showCompostPreview, setShowCompostPreview] = useState(false);
 
-  const CompostPreviewBubble = () => {
-    return (
-      <div className="preview-bubble">
-        <p>This page talks about composting at Vanderbilt.</p>
-        {/* Add more preview content here */}
-      </div>
-    );
-  };
-
-  const previewBubbleStyle = {
-    position: 'absolute',
-    top: '70%',  // Adjust as needed
-    left: '15%', // Adjust as needed
-    zIndex: 1,
-    backgroundColor: '#f9f9f9',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    padding: '10px',
-    opacity: 0.8,
-  };
-
-  const previewBubbleHoverStyle = {
-    position: 'absolute',
-    top: '70%',  // Adjust as needed
-    left: '15%', // Adjust as needed
-    zIndex: 1,
-    backgroundColor: '#f9f9f9',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    padding: '10px',
-    opacity: 1, // Fully opaque
-  };
+  
 
 useEffect(() => {
-
-
-
     const savedComments = localStorage.getItem('comments');
     if (savedComments) {
       setComments(JSON.parse(savedComments));
@@ -86,12 +52,50 @@ useEffect(() => {
     setNewComment('');
   };
 
+  const CompostPreviewBubble = ({goToCompost}) => {
+    return (
+      <div className="preview-bubble">
+        <img className='preview_compost' src='recycling.png' alt='recycling' onClick={goToCompost}/>
+        <p style={{ fontSize: '0.8em' }} onClick={goToCompost}>Learn More about Composting at Vanderbilt.</p>
+        {/* Add more preview content here */}
+       
+      </div>
+    );
+  };
+
+  const previewBubbleStyle = {
+    position: 'absolute',
+    top: '70%',  // Adjust as needed
+    left: '5%', // Adjust as needed
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 0.8,
+    
+  };
+
+  const previewBubbleHoverStyle = {
+    position: 'absolute',
+    top: '70%',  // Adjust as needed
+    left: '5%', // Adjust as needed
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 1, // Fully opaque
+  };
+
   return (
     <div>
       <div className="header">
         <img src="/Vanderbilt-University-Logo.png" alt="Vanderbilt Logo" className="logo" />
       </div>
-      <h1>Sustainability Dashboard Prototype</h1>
+      <h1>Sustainability    Dashboard</h1>
       <a href="SankeyPlot.html" className="sankey-link"><h3>》〉》〉》〉Sankey Plot Builder 《〈《〈《〈</h3></a>
       <div className="column-names">
         <span>Metric</span>
@@ -117,11 +121,14 @@ useEffect(() => {
           Compost to Dining
         </button>
         <div 
+        onClick={goToCompost} 
   style={showCompostPreview ? previewBubbleHoverStyle : previewBubbleStyle} 
   onMouseEnter={() => setShowCompostPreview(true)}
   onMouseLeave={() => setShowCompostPreview(false)}
+  
+
 >
-  <CompostPreviewBubble />
+<CompostPreviewBubble goToCompost={goToCompost} /> 
 </div>
         <button 
           className="overlay-button-4" 
