@@ -3,14 +3,52 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import SankeyImage from './Sankey.jpeg'; // Assuming Sankey.jpeg is in the same directory as App.js
 
+  
 const MainPage = () => {
   const navigate = useNavigate(); // Initialize useNavigate
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [charCount, setCharCount] = useState(0);
 const maxCharCount = 1000; 
+const [showCompostPreview, setShowCompostPreview] = useState(false);
+
+  const CompostPreviewBubble = () => {
+    return (
+      <div className="preview-bubble">
+        <p>This page talks about composting at Vanderbilt.</p>
+        {/* Add more preview content here */}
+      </div>
+    );
+  };
+
+  const previewBubbleStyle = {
+    position: 'absolute',
+    top: '70%',  // Adjust as needed
+    left: '15%', // Adjust as needed
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '4px',
+    padding: '10px',
+    opacity: 0.8,
+  };
+
+  const previewBubbleHoverStyle = {
+    position: 'absolute',
+    top: '70%',  // Adjust as needed
+    left: '15%', // Adjust as needed
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '4px',
+    padding: '10px',
+    opacity: 1, // Fully opaque
+  };
 
 useEffect(() => {
+
+
+
     const savedComments = localStorage.getItem('comments');
     if (savedComments) {
       setComments(JSON.parse(savedComments));
@@ -73,24 +111,34 @@ useEffect(() => {
         <button className="overlay-button-2" style={{ top: '21.5%', left: '40%' }}>More on Purchased Energy</button>
         <button 
           className="overlay-button-3" 
-          style={{ top: '51.5%', left: '39%' }} 
+          style={{ top: '51.5%', left: '44%' }} 
           onClick={goToDining} // Set onClick to navigate
         >
-          Dining to Food Consumption
+          Compost to Dining
         </button>
+        <div 
+  style={showCompostPreview ? previewBubbleHoverStyle : previewBubbleStyle} 
+  onMouseEnter={() => setShowCompostPreview(true)}
+  onMouseLeave={() => setShowCompostPreview(false)}
+>
+  <CompostPreviewBubble />
+</div>
         <button 
           className="overlay-button-4" 
           style={{ top: '79%', left: '19%' }} 
+          onMouseEnter={() => setShowCompostPreview(true)}
+          onMouseLeave={() => setShowCompostPreview(false)}
           onClick={goToCompost} // Set onClick to navigate
         >
-          Dining to Food Consumption
+          Vanderbilt Compost
         </button>
+        {showCompostPreview && <div style={previewBubbleStyle}><CompostPreviewBubble /></div>}
         <button 
           className="overlay-button-5" 
-          style={{ top: '62.5%', left: '56%' }} 
+          style={{ top: '62.5%', left: '60%' }} 
           onClick={goToUniversity} // Set onClick to navigate
         >
-          Food Consumption to University Constrol
+          Dining to Food Consumption
         </button>
         
         
