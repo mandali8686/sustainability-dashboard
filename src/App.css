@@ -128,6 +128,7 @@
   .compost{
     text-align: left;
     margin: auto;
+    margin-left: 25px;
     width:80%;
   }
 
@@ -157,6 +158,27 @@
   .preview_compost{
     width: 40px;
   }
+
+  .elec_building{
+    width: 70%;
+    height: auto;
+  }
+
+  .elec{
+    height: 100px;
+    width: auto;
+  }
+
+  .subtitle{
+    text-align: left;
+    margin-left: 25px;
+  }
+
+  .preview_electricity{
+    width: 40px;
+  
+  }
+  
 
  
   

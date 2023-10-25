@@ -11,6 +11,7 @@ const MainPage = () => {
   const [charCount, setCharCount] = useState(0);
 const maxCharCount = 1000; 
 const [showCompostPreview, setShowCompostPreview] = useState(false);
+const [showElectricityPreview, setShowElectricityPreview] = useState(false);
 
   
 
@@ -56,12 +57,26 @@ useEffect(() => {
     return (
       <div className="preview-bubble">
         <img className='preview_compost' src='recycling.png' alt='recycling' onClick={goToCompost}/>
-        <p style={{ fontSize: '0.8em' }} onClick={goToCompost}>Learn More about Composting at Vanderbilt.</p>
+        <p style={{ fontSize: '0.7em' }} onClick={goToCompost}>Learn More about Composting at Vanderbilt.</p>
+        
         {/* Add more preview content here */}
        
       </div>
     );
   };
+
+  // Add this new state variable alongside your existing ones
+
+// Create a new bubble component for Electricity
+const ElectricityPreviewBubble = ({ goToElectricity }) => {
+  return (
+    <div className="preview-bubble" onClick={goToElectricity}>
+      <img className='preview_electricity' src='elec.png' alt='electricity' />
+      <p style={{ fontSize: '0.7em' }}>Learn More about Electricity Usage.</p>
+      {/* Add more preview content here */}
+    </div>
+  );
+};
 
   const previewBubbleStyle = {
     position: 'absolute',
@@ -90,6 +105,36 @@ useEffect(() => {
     opacity: 1, // Fully opaque
   };
 
+  const electricityPreviewBubbleStyle = {
+    // ... existing style attributes
+    position: 'absolute',
+    top: '26%', 
+    left: '9%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 0.8,
+    // ...
+  };
+  
+  const electricityPreviewBubbleHoverStyle = {
+    // ... existing style attributes
+    position: 'absolute',
+    top: '26%', 
+    left: '9%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 1, 
+    // ...
+  };
+
   return (
     <div>
       <div className="header">
@@ -105,9 +150,19 @@ useEffect(() => {
       </div>
       <div className="image-container">
         <img className="sankey-image" src={SankeyImage} alt="Sankey Diagram" />
+        <div 
+  onClick={goToElectricity}
+  style={showElectricityPreview ? electricityPreviewBubbleHoverStyle : electricityPreviewBubbleStyle} 
+  onMouseEnter={() => setShowElectricityPreview(true)}
+  onMouseLeave={() => setShowElectricityPreview(false)}
+>
+  <ElectricityPreviewBubble goToElectricity={goToElectricity} />
+</div>
         <button 
           className="overlay-button-1" 
           style={{ top: '34%', left: '23%' }} 
+          onMouseEnter={() => setShowElectricityPreview(true)}
+  onMouseLeave={() => setShowElectricityPreview(false)}
           onClick={goToElectricity} // Set onClick to navigate
         >
           More on Electricity
