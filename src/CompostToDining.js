@@ -23,7 +23,18 @@ const CompostToDining = () => {
       <h4>Specialized Facilities:</h4>
       <p>Some materials may require specialized recycling facilities. For example, electronic waste is often sent to facilities equipped to safely handle and recycle these materials.</p>
       </div>
-      {/* Add your content here */}
+      <div className='compost'>
+        {/* ... [previous content] */}
+        <h2>What other energy uses/sustainability metrics does it overlap with?</h2>
+        <p>Both composting and recycling play significant roles in the broader context of energy use and sustainability. Here's how they intersect with other sustainability metrics:</p>
+        <ul>
+          <li><strong>Carbon Footprint Reduction</strong>: Composting organic waste prevents the release of methane, a potent greenhouse gas, when the waste decomposes in a landfill. Recycling materials, especially aluminum and plastics, reduces the energy required to produce new products, leading to fewer carbon emissions compared to producing items from raw materials.</li>
+          <li><strong>Waste Reduction</strong>: Both composting and recycling directly reduce the amount of waste sent to landfills. This reduces the need for new landfills and the environmental degradation associated with them.</li>
+          <li><strong>Water Conservation</strong>: Recycling paper products results in significant water savings compared to producing new paper from trees. Similarly, using compost can reduce the need for water in agriculture due to its water retention capabilities.</li>
+          <li><strong>Preservation of Natural Resources</strong>: Recycling conserves raw materials, reducing the need for deforestation, mining, and drilling, which can be disruptive to ecosystems.</li>
+          <li><strong>Economic Benefits</strong>: Recycling can lead to job creation in the recycling and manufacturing sectors. Composting can boost the agricultural sector by producing high-quality soil additives.</li>
+        </ul>
+      </div>
     </div>
   );
 };

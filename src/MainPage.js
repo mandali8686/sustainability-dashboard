@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
-import SankeyImage from './Sankey.jpeg'; // Assuming Sankey.jpeg is in the same directory as App.js
 
   
 const MainPage = () => {
@@ -12,6 +11,8 @@ const MainPage = () => {
 const maxCharCount = 1000; 
 const [showCompostPreview, setShowCompostPreview] = useState(false);
 const [showElectricityPreview, setShowElectricityPreview] = useState(false);
+const [showDiningPreview, setShowDiningPreview] = useState(false);
+const [showFoodConsumptionPreview, setShowFoodConsumptionPreview] = useState(false);
 
   
 
@@ -78,10 +79,86 @@ const ElectricityPreviewBubble = ({ goToElectricity }) => {
   );
 };
 
+const FoodConsumptionPreviewBubble = ({ goToUniversity }) => {
+    return (
+      <div className="preview-bubble" onClick={goToUniversity}>
+        <img className='preview_dining' src='consumption.png' alt='food' />
+        <p style={{ fontSize: '0.7em' }}>Learn More about Dining to Food Consumption.</p>
+        {/* Add more preview content here */}
+      </div>
+    );
+  };
+  
+
+const DiningPreviewBubble = ({ goToDining }) => {
+    return (
+      <div className="preview-bubble" onClick={goToDining}>
+        <img className='preview_dining' src='dining.png' alt='dining' />
+        <p style={{ fontSize: '0.7em' }}>Learn More about Compost to Dining at Vanderbilt.</p>
+        {/* Add more preview content here */}
+      </div>
+    );
+  };
+
+  const diningPreviewBubbleStyle = {
+    position: 'absolute',
+    top: '58%', 
+    left: '29%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 0.8,
+  };
+  
+  const diningPreviewBubbleHoverStyle = {
+    position: 'absolute',
+    top: '58%', 
+    left: '29%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 1,
+  };
+
+  const foodConsumptionPreviewBubbleStyle = {
+    position: 'absolute',
+    top: '54%',  
+    left: '50%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 0.8,
+  };
+  
+  const foodConsumptionPreviewBubbleHoverStyle = {
+    position: 'absolute',
+    top: '54%',  
+    left: '50%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 1,
+  };
+  
+  
+  
+
   const previewBubbleStyle = {
     position: 'absolute',
     top: '70%',  // Adjust as needed
-    left: '5%', // Adjust as needed
+    left: '4%', // Adjust as needed
     zIndex: 1,
     backgroundColor: '#f9f9f9',
     border: '1px solid #ccc',
@@ -95,7 +172,7 @@ const ElectricityPreviewBubble = ({ goToElectricity }) => {
   const previewBubbleHoverStyle = {
     position: 'absolute',
     top: '70%',  // Adjust as needed
-    left: '5%', // Adjust as needed
+    left: '4%', // Adjust as needed
     zIndex: 1,
     backgroundColor: '#f9f9f9',
     border: '1px solid #ccc',
@@ -140,7 +217,7 @@ const ElectricityPreviewBubble = ({ goToElectricity }) => {
       <div className="header">
         <img src="/Vanderbilt-University-Logo.png" alt="Vanderbilt Logo" className="logo" />
       </div>
-      <h1>Sustainability    Dashboard</h1>
+      <h1>Vanderbilt Sustainability    Dashboard</h1>
       <a href="SankeyPlot.html" className="sankey-link"><h3>》〉》〉》〉Sankey Plot Builder 《〈《〈《〈</h3></a>
       <div className="column-names">
         <span>Metric</span>
@@ -149,7 +226,7 @@ const ElectricityPreviewBubble = ({ goToElectricity }) => {
         <span>Responsibility</span>
       </div>
       <div className="image-container">
-        <img className="sankey-image" src={SankeyImage} alt="Sankey Diagram" />
+        <img className="sankey-image" src='sankey_no.png' alt="Sankey Diagram" />
         <div 
   onClick={goToElectricity}
   style={showElectricityPreview ? electricityPreviewBubbleHoverStyle : electricityPreviewBubbleStyle} 
@@ -160,7 +237,7 @@ const ElectricityPreviewBubble = ({ goToElectricity }) => {
 </div>
         <button 
           className="overlay-button-1" 
-          style={{ top: '34%', left: '23%' }} 
+          style={{ top: '21%', left: '8%' }} 
           onMouseEnter={() => setShowElectricityPreview(true)}
   onMouseLeave={() => setShowElectricityPreview(false)}
           onClick={goToElectricity} // Set onClick to navigate
@@ -168,10 +245,21 @@ const ElectricityPreviewBubble = ({ goToElectricity }) => {
           More on Electricity
         </button>
         <button className="overlay-button-2" style={{ top: '21.5%', left: '40%' }}>More on Purchased Energy</button>
+        <div 
+  onClick={goToDining} 
+  style={showDiningPreview ? diningPreviewBubbleHoverStyle : diningPreviewBubbleStyle} 
+  onMouseEnter={() => setShowDiningPreview(true)}
+  onMouseLeave={() => setShowDiningPreview(false)}
+>
+  <DiningPreviewBubble goToDining={goToDining} />
+</div>
+
         <button 
           className="overlay-button-3" 
-          style={{ top: '51.5%', left: '44%' }} 
+          style={{ top: '64%', left: '30%' }} 
           onClick={goToDining} // Set onClick to navigate
+          onMouseEnter={() => setShowDiningPreview(true)}
+          onMouseLeave={() => setShowDiningPreview(false)}
         >
           Compost to Dining
         </button>
@@ -187,7 +275,7 @@ const ElectricityPreviewBubble = ({ goToElectricity }) => {
 </div>
         <button 
           className="overlay-button-4" 
-          style={{ top: '79%', left: '19%' }} 
+          style={{ top: '68%', left: '14%' }} 
           onMouseEnter={() => setShowCompostPreview(true)}
           onMouseLeave={() => setShowCompostPreview(false)}
           onClick={goToCompost} // Set onClick to navigate
@@ -195,10 +283,22 @@ const ElectricityPreviewBubble = ({ goToElectricity }) => {
           Vanderbilt Compost
         </button>
         {showCompostPreview && <div style={previewBubbleStyle}><CompostPreviewBubble /></div>}
+        
+        <div 
+  onClick={goToUniversity}
+  style={showFoodConsumptionPreview ? foodConsumptionPreviewBubbleHoverStyle : foodConsumptionPreviewBubbleStyle} 
+  onMouseEnter={() => setShowFoodConsumptionPreview(true)}
+  onMouseLeave={() => setShowFoodConsumptionPreview(false)}
+>
+  <FoodConsumptionPreviewBubble goToUniversity={goToUniversity} />
+</div>
         <button 
           className="overlay-button-5" 
-          style={{ top: '62.5%', left: '60%' }} 
+          style={{ top: '54%', left: '54%' }} 
           onClick={goToUniversity} // Set onClick to navigate
+          onMouseEnter={() => setShowFoodConsumptionPreview(true)}
+  onMouseLeave={() => setShowFoodConsumptionPreview(false)}
+
         >
           Dining to Food Consumption
         </button>
