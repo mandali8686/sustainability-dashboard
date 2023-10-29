@@ -19,6 +19,8 @@ function App() {
           <Route path="/compost_to_dining" element={<CompostToDining />} />
           <Route path="/FCTUC" element={<FCTUC />} />
           <Route path="/UC" element={<UC />} />
+          <Route path="/main" element={<MainPage />} />
+          
         
         </Routes>
       </div>

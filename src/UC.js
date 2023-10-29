@@ -1,6 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 
 const UC = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+  const goToNext = () => {
+    navigate('/main'); // Navigate to Electricity page
+  };
+  
   return (
     <div>
       <h1>University Control of Food Waste</h1>
@@ -25,6 +31,7 @@ const UC = () => {
           <li>Excess food is donated to people in need in the community.</li>
         </ul>
         <img src='landfill.png' className='elec_building' alt='landfill pie'/>
+        <button className='next' onClick={goToNext}>Go Back To MainPage</button>
       
       
       </div>

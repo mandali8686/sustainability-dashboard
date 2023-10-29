@@ -255,6 +255,21 @@
     color: white; /* Or any other color you prefer */
     margin-right: 20px;
   }
+
+  .next{
+    position: fixed;  /* or 'absolute' depending on your layout */
+  bottom: 0;
+  right: 0;
+  margin-top: 30px;
+  margin-bottom: 40%;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: rgb(15, 146, 15);
+    color: white;
+    border-radius: 5%;
+    font-weight: bold;
+    opacity: 70%;
+  }
   
 
  

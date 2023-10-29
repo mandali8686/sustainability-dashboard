@@ -1,6 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
+
 
 const CompostToDining = () => {
+
+  const navigate = useNavigate(); // Initialize useNavigate
+  const goToDining = () => {
+    navigate('/dining'); // Navigate to Electricity page
+  };
+  
+
   return (
     <div>
       <h1>Vanderbilt Compost</h1>
@@ -34,6 +43,7 @@ const CompostToDining = () => {
           <li><strong>Preservation of Natural Resources</strong>: Recycling conserves raw materials, reducing the need for deforestation, mining, and drilling, which can be disruptive to ecosystems.</li>
           <li><strong>Economic Benefits</strong>: Recycling can lead to job creation in the recycling and manufacturing sectors. Composting can boost the agricultural sector by producing high-quality soil additives.</li>
         </ul>
+        <button className='next' onClick={goToDining}>Go To Next Path</button>
       </div>
     </div>
   );

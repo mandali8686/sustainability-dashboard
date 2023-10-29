@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
+
 
 const FCTUC = () => {
+
+  const navigate = useNavigate(); // Initialize useNavigate
+  const goToNext = () => {
+    navigate('/UC'); // Navigate to Electricity page
+  };
+  
   return (
     <div>
       <h1>Dining to Food Consumption</h1>
@@ -14,6 +22,8 @@ const FCTUC = () => {
       <h3>Detailed Graph Description</h3>
       <p>The bar graph visualizes the average food consumption in kilograms across different dining hall categories at Vanderbilt University. Seven categories are represented: 'Average Student,' 'Rand,' 'Kissam,' 'Commons,' 'EBI,' 'Rothschild,' and 'Zeppos.' Each bar is color-coded for easy identification, and the values range from highest to lowest, aligning closely with the spectrum: 'Average Student,' 'Rand,' 'Commons,' 'Zeppos,' 'Kissam,' 'Rothschild,' and 'EBI.' The graph paints a clear picture of the disparities in food consumption across different dining categories, with the average student consuming far more than any individual dining hall.</p>
       </div>
+      <button className='next' onClick={goToNext}>Go To Next Path</button>
+      
     </div>
   );
 };
