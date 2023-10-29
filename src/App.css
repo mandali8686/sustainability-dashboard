@@ -27,7 +27,8 @@
     width: 63%;
     margin-left: 26%;  
     margin-top: 60px;
-    background-color: green;
+    background-color: rgb(125, 215, 125);
+    opacity: 90%;
     
   }
   
@@ -114,7 +115,7 @@
   }
   
   .column-names span {
-    background-color: green;
+    background-color: rgb(35, 181, 35);
     padding: 5px;
     text-align: center;
       /* Setting a unique font */
