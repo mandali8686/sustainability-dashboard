@@ -1,6 +1,18 @@
 .App {
     text-align: center;
   }
+
+  body {
+    background-image: url('/public/bk.png');
+    background-size:contain; /* Cover the entire screen */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Fix the background position */
+  }
+
+  h2,h1 {
+    font-family: "Times New Roman", Times, serif;
+  }
+  
   
   .image-container {
     width: 80%;
@@ -13,8 +25,10 @@
 
   .column-names {
     width: 63%;
-    margin-left: 28%;  
+    margin-left: 26%;  
     margin-top: 60px;
+    background-color: green;
+    
   }
   
   .image-container {
@@ -77,7 +91,20 @@
     border: none;
     padding: 10px;
     cursor: pointer;
+    opacity: 0%;
   }
+
+  .overlay-button-6{
+    position: absolute;
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 220px;
+    height: 35px;
+    transform: rotate(335deg);
+    opacity: 0%;
+}
   
   .column-names {
     display: flex;
@@ -87,21 +114,23 @@
   }
   
   .column-names span {
+    background-color: green;
+    padding: 5px;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;  /* Setting a unique font */
+      /* Setting a unique font */
   font-size: 24px;  /* Increasing the font size */
   font-weight: bold;  /* Making text bold */
-  color: #007BFF;  /* Changing text color */
+  color: aliceblue;  /* Changing text color */
   }
   .header {
-    background-color: rgb(226, 224, 224);
+    background-color:black;
     padding: 5px;
     text-align: left;
     height: 50px;
   }
   
   .logo {
-    max-height: 70px;  /* Limit the height */
+    max-height: 50px;  /* Limit the height */
   width: auto;
   height: auto;
   }
@@ -111,6 +140,10 @@
     border: 1px solid #ccc;
     padding: 20px;
     position: relative;
+  }
+
+  .main-header{
+    padding:50px;
   }
   
   .discussion-board textarea {
@@ -141,8 +174,8 @@
   .compost{
     text-align: left;
     margin: auto;
-    margin-left: 25px;
-    width:80%;
+    margin-left: 205px;
+    width:70%;
   }
 
   .recycling{
@@ -204,6 +237,25 @@
   .icon-dining{
     width: 100px;
   }
+  textarea{
+    width: 40%;
+    margin: auto;
+    margin-left: 10%;
+    text-align: left;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-links a {
+    margin-left: 10px; /* Or any other spacing you prefer */
+    text-decoration: none; /* To remove underlines */
+    color: white; /* Or any other color you prefer */
+    margin-right: 20px;
+  }
+  
 
  
   

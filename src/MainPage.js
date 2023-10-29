@@ -13,6 +13,7 @@ const [showCompostPreview, setShowCompostPreview] = useState(false);
 const [showElectricityPreview, setShowElectricityPreview] = useState(false);
 const [showDiningPreview, setShowDiningPreview] = useState(false);
 const [showFoodConsumptionPreview, setShowFoodConsumptionPreview] = useState(false);
+const [showUCPreview, setShowUCPreview] = useState(false);
 
   
 
@@ -38,6 +39,11 @@ useEffect(() => {
   const goToUniversity = () => {
     navigate('/FCTUC'); // Navigate to Electricity page
   };
+
+  const goToUC = () => {
+    navigate('/UC'); // Navigate to Electricity page
+  };
+
 
 
   const handleCommentChange = (e) => {
@@ -100,23 +106,62 @@ const DiningPreviewBubble = ({ goToDining }) => {
     );
   };
 
-  const diningPreviewBubbleStyle = {
+  const UCPreviewBubble = ({ goToUC }) => {
+    return (
+      <div className="preview-bubble" onClick={goToUC}>
+        <img className='preview_electricity' src='vandy.png' alt='electricity' />
+        <p style={{ fontSize: '0.7em' }}>Learn More about Univerisity Control on Food Waste.</p>
+        {/* Add more preview content here */}
+      </div>
+    );
+  };
+
+  const UCPreviewBubbleStyle = {
     position: 'absolute',
-    top: '58%', 
-    left: '29%', 
+    top: '44%', 
+    left: '73%', 
     zIndex: 1,
     backgroundColor: '#f9f9f9',
     border: '1px solid #ccc',
     borderRadius: '5px',
     padding: '10px',
     width: '100px',
-    opacity: 0.8,
+    opacity: 0.7,
+  };
+
+  const UCPreviewBubbleHoverStyle = {
+    position: 'absolute',
+    top: '44%', 
+    left: '73%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 1,
+  };
+
+  
+  
+
+  const diningPreviewBubbleStyle = {
+    position: 'absolute',
+    top: '60%', 
+    left: '26%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 0.7,
   };
   
   const diningPreviewBubbleHoverStyle = {
     position: 'absolute',
-    top: '58%', 
-    left: '29%', 
+    top: '60%', 
+    left: '26%', 
     zIndex: 1,
     backgroundColor: '#f9f9f9',
     border: '1px solid #ccc',
@@ -128,21 +173,21 @@ const DiningPreviewBubble = ({ goToDining }) => {
 
   const foodConsumptionPreviewBubbleStyle = {
     position: 'absolute',
-    top: '54%',  
-    left: '50%', 
+    top: '50%',  
+    left: '48%', 
     zIndex: 1,
     backgroundColor: '#f9f9f9',
     border: '1px solid #ccc',
     borderRadius: '5px',
     padding: '10px',
     width: '100px',
-    opacity: 0.8,
+    opacity: 0.7,
   };
   
   const foodConsumptionPreviewBubbleHoverStyle = {
     position: 'absolute',
-    top: '54%',  
-    left: '50%', 
+    top: '50%',  
+    left: '48%', 
     zIndex: 1,
     backgroundColor: '#f9f9f9',
     border: '1px solid #ccc',
@@ -157,7 +202,7 @@ const DiningPreviewBubble = ({ goToDining }) => {
 
   const previewBubbleStyle = {
     position: 'absolute',
-    top: '70%',  // Adjust as needed
+    top: '66%',  // Adjust as needed
     left: '4%', // Adjust as needed
     zIndex: 1,
     backgroundColor: '#f9f9f9',
@@ -165,13 +210,13 @@ const DiningPreviewBubble = ({ goToDining }) => {
     borderRadius: '5px',
     padding: '10px',
     width: '100px',
-    opacity: 0.8,
+    opacity: 0.7,
     
   };
 
   const previewBubbleHoverStyle = {
     position: 'absolute',
-    top: '70%',  // Adjust as needed
+    top: '66%',  // Adjust as needed
     left: '4%', // Adjust as needed
     zIndex: 1,
     backgroundColor: '#f9f9f9',
@@ -215,9 +260,14 @@ const DiningPreviewBubble = ({ goToDining }) => {
   return (
     <div>
       <div className="header">
-        <img src="/Vanderbilt-University-Logo.png" alt="Vanderbilt Logo" className="logo" />
+        <img src="/vandy-logo.png" alt="Vanderbilt Logo" className="logo" />
+        <div className="header-links">
+    <a href="/menu">Menu</a>
+    <a href="/faq">FAQ</a>
+    <a href="/contact">Contact Us</a>
+  </div>
       </div>
-      <h1>Vanderbilt Sustainability    Dashboard</h1>
+      <h1 className='main-header'>Vanderbilt Sustainability    Dashboard</h1>
       <a href="SankeyPlot.html" className="sankey-link"><h3>》〉》〉》〉Sankey Plot Builder 《〈《〈《〈</h3></a>
       <div className="column-names">
         <span>Metric</span>
@@ -284,8 +334,7 @@ const DiningPreviewBubble = ({ goToDining }) => {
         </button>
         {showCompostPreview && <div style={previewBubbleStyle}><CompostPreviewBubble /></div>}
         
-        <div 
-  onClick={goToUniversity}
+        <div onClick={goToUniversity}
   style={showFoodConsumptionPreview ? foodConsumptionPreviewBubbleHoverStyle : foodConsumptionPreviewBubbleStyle} 
   onMouseEnter={() => setShowFoodConsumptionPreview(true)}
   onMouseLeave={() => setShowFoodConsumptionPreview(false)}
@@ -301,6 +350,23 @@ const DiningPreviewBubble = ({ goToDining }) => {
 
         >
           Dining to Food Consumption
+        </button>
+        <div onClick={goToUC}
+  style={showUCPreview ? UCPreviewBubbleHoverStyle : UCPreviewBubbleStyle} 
+  onMouseEnter={() => setShowUCPreview(true)}
+  onMouseLeave={() => setShowUCPreview(false)}
+>
+  <UCPreviewBubble goToUC={goToUC} />
+</div>
+        <button 
+          className="overlay-button-6" 
+          style={{ top: '50%', left: '76%' }} 
+          onClick={goToUC} // Set onClick to navigate
+          onMouseEnter={() => setShowUCPreview(true)}
+  onMouseLeave={() => setShowUCPreview(false)}
+
+        >
+          Food Consumption to Univerisity Control
         </button>
         
         

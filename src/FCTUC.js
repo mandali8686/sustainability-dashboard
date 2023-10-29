@@ -6,7 +6,7 @@ const FCTUC = () => {
       <h1>Dining to Food Consumption</h1>
       <img className='icon-dining' src='/consumption.png' alt='food consumption'/>
       
-      <div className='dining'>
+      <div className='compost'>
       <h2>Food Consumption for Average Vanderbilt Student</h2>
       <p>Here is the bar graph showcasing food consumption at Vanderbilt University by different dining hall categories. Each bar represents the average food consumption in kilograms for the respective category, and each column has a distinct color for easy identification. As you can see, the "Average Student" category has significantly higher food consumption compared to the specific dining halls.</p>
       <img className='dummy' src='/food_consumption.png' alt='food consumption'/>

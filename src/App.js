@@ -6,6 +6,7 @@ import Electricity from './Electricity';  // Import the Electricity component
 import Dining from './Dining';
 import CompostToDining from './CompostToDining';
 import FCTUC from './FCTUC';
+import UC from './UC';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path="/dining" element={<Dining />} />
           <Route path="/compost_to_dining" element={<CompostToDining />} />
           <Route path="/FCTUC" element={<FCTUC />} />
+          <Route path="/UC" element={<UC />} />
+        
         </Routes>
       </div>
     </Router>
