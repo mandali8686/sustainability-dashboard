@@ -270,10 +270,10 @@ const DiningPreviewBubble = ({ goToDining }) => {
       <h1 className='main-header'>Vanderbilt Sustainability    Dashboard</h1>
       <a href="SankeyPlot.html" className="sankey-link"><h3>》〉》〉》〉Sankey Plot Builder 《〈《〈《〈</h3></a>
       <div className="column-names">
-        <span>Metric</span>
-        <span>Use</span>
-        <span>Opportunity</span>
-        <span>Responsibility</span>
+        <span>Define</span>
+        <span>Track</span>
+        <span>Apply</span>
+        <span>Solve</span>
       </div>
       <div className="image-container">
         <img className="sankey-image" src='sankey_no.png' alt="Sankey Diagram" />
