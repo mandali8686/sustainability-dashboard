@@ -127,6 +127,19 @@
     transform: rotate(335deg);
     opacity: 0%;
 }
+
+.overlay-button-7{
+  position: absolute;
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 228px;
+    height: 60px;
+    transform: rotate(15deg);
+    opacity: 0%;
+    
+}
   
   .column-names {
     display: flex;
@@ -379,8 +392,23 @@
   color: green;
 }
 
-.submit{
+.connection{
+text-align: center;
+font-size: 2em;
+width: 90%;
+margin-top: 20px;
+}
 
+.green-text {
+  color: green; /* Or any specific shade of green you prefer */
+}
+
+.img-display{
+  text-align: center;
+}
+
+.submit{
+  margin-bottom: 50px;
 }
 
 

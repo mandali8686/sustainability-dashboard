@@ -18,14 +18,18 @@ const Individual = () => {
   </div>
   </div>
       
-      <h1 className='main-header'>individual Actions of Food Waste</h1>
-      <img className='icon-dining' src='/vandy.png' alt='food consumption'/>
+      <h1 className='main-header'>Individual Actions of Food Waste</h1>
+      <img className='icon-dining' src='/inid.png' alt='food consumption'/>
       
       <div className='compost'>
-      <h2>Local Sourcing</h2>
-      <p>Vanderbilt collaborates with local farmers through Creation Gardens and suppliers to support the community and reduce the environmental impact associated with long-distance transportation. 
+      <h2>Food Choices</h2>
+      
+      <p>Adopting a more eco-friendly diet can significantly benefit the environment. Here are some guidelines to help you make sustainable food choices:
 </p>
-      {/* Add your content here */}
+<ul>
+    <li><strong>Mindful Portion Sizes:</strong> Take smaller portions to avoid leaving uneaten food on your plate. You can always go back for seconds if you're still hungry.
+</li>
+</ul>
       <h2>Direct Communication and Collaboration with University Community</h2>
       <ul>
           <li>Hosts food waste tabling events for food waste and sustainability</li>

@@ -46,6 +46,9 @@ useEffect(() => {
   const goToMain = () => {
     navigate('/main'); // Navigate to Electricity page
   };
+  const goToIndividual = () => {
+    navigate('/individual'); // Navigate to Electricity page
+  };
 
 
   const handleCommentChange = (e) => {
@@ -384,6 +387,16 @@ const DiningPreviewBubble = ({ goToDining }) => {
           Food Consumption to Univerisity Control
         </button>
         
+        <button 
+          className="overlay-button-7" 
+          style={{ top: '62%', left: '77%' }} 
+          onClick={goToIndividual} // Set onClick to navigate
+          onMouseEnter={() => setShowUCPreview(true)}
+  onMouseLeave={() => setShowUCPreview(false)}
+
+        >
+          Individual Actions
+        </button>
         
       </div>
       <div className="discussion-board">
