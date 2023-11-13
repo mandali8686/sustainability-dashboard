@@ -257,6 +257,8 @@
   
   .icon-dining{
     width: 100px;
+    padding: 10px;
+    background-color: white;
   }
   textarea{
     width: 40%;
