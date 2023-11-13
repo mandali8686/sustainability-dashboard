@@ -7,6 +7,7 @@ import Dining from './Dining';
 import CompostToDining from './CompostToDining';
 import FCTUC from './FCTUC';
 import UC from './UC';
+import Individual from './Individual';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/FCTUC" element={<FCTUC />} />
           <Route path="/UC" element={<UC />} />
           <Route path="/main" element={<MainPage />} />
+          <Route path="/individual" element={<Individual />} />
           
         
         </Routes>

@@ -395,7 +395,7 @@ const DiningPreviewBubble = ({ goToDining }) => {
         />
         <span className="char-count">{`${charCount}/${maxCharCount}`}</span>
         <br/>
-        <button onClick={handleCommentSubmit}>Submit</button>
+        <button className='submit' onClick={handleCommentSubmit}>Submit</button>
         <ul>
           {comments.map((comment, index) => (
             <li key={index}>{comment}</li>
