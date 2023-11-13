@@ -43,7 +43,9 @@ useEffect(() => {
   const goToUC = () => {
     navigate('/UC'); // Navigate to Electricity page
   };
-
+  const goToMain = () => {
+    navigate('/main'); // Navigate to Electricity page
+  };
 
 
   const handleCommentChange = (e) => {
@@ -140,6 +142,7 @@ const DiningPreviewBubble = ({ goToDining }) => {
     padding: '10px',
     width: '100px',
     opacity: 1,
+
   };
 
   
@@ -260,7 +263,7 @@ const DiningPreviewBubble = ({ goToDining }) => {
   return (
     <div>
       <div className="header">
-        <img src="/vandy-logo.png" alt="Vanderbilt Logo" className="logo" />
+        <img src="/vandy-logo.png" alt="Vanderbilt Logo" className="logo" onClick={goToMain} />
         <div className="header-links">
     <a href="/menu">Menu</a>
     <a href="/faq">FAQ</a>
@@ -268,16 +271,28 @@ const DiningPreviewBubble = ({ goToDining }) => {
   </div>
       </div>
       <h1 className='main-header'>Vanderbilt Sustainability    Dashboard</h1>
-      <a href="SankeyPlot.html" className="sankey-link"><h3>》〉》〉》〉Sankey Plot Builder 《〈《〈《〈</h3></a>
-      <div className="column-names">
-        <span>Define</span>
-        <span>Track</span>
-        <span>Apply</span>
-        <span>Solve</span>
-      </div>
+      <h3 className='instruction'>Click on bars to filter. Click on boxes to display Entries</h3>
+      <div className="triangle-container">
+  <div className="triangle-wrapper">
+    <div className="triangle"></div>
+    <div className="triangle-text">Define</div>
+  </div>
+  <div className="triangle-wrapper">
+    <div className="triangle"></div>
+    <div className="triangle-text">Track</div>
+  </div>
+  <div className="triangle-wrapper">
+    <div className="triangle"></div>
+    <div className="triangle-text">Apply</div>
+  </div>
+  <div className="triangle-wrapper">
+    <div className="triangle"></div>
+    <div className="triangle-text">Solve</div>
+  </div>
+</div>
       <div className="image-container">
         <img className="sankey-image" src='sankey_no.png' alt="Sankey Diagram" />
-        <div 
+        <div className='preview-dining'
   onClick={goToElectricity}
   style={showElectricityPreview ? electricityPreviewBubbleHoverStyle : electricityPreviewBubbleStyle} 
   onMouseEnter={() => setShowElectricityPreview(true)}
@@ -295,7 +310,7 @@ const DiningPreviewBubble = ({ goToDining }) => {
           More on Electricity
         </button>
         <button className="overlay-button-2" style={{ top: '21.5%', left: '40%' }}>More on Purchased Energy</button>
-        <div 
+        <div className='preview-dining'
   onClick={goToDining} 
   style={showDiningPreview ? diningPreviewBubbleHoverStyle : diningPreviewBubbleStyle} 
   onMouseEnter={() => setShowDiningPreview(true)}
@@ -372,7 +387,7 @@ const DiningPreviewBubble = ({ goToDining }) => {
         
       </div>
       <div className="discussion-board">
-        <h2>Discussion Board</h2>
+        <h2 className='discuss'>Share Your Ideas</h2>
         <textarea 
           value={newComment} 
           onChange={handleCommentChange}

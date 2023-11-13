@@ -8,12 +8,25 @@ const Dining = () => {
   const goToNext = () => {
     navigate('/FCTUC'); // Navigate to Electricity page
   };
+  const goToMain = () => {
+    navigate('/main'); // Navigate to Electricity page
+  };
+  
   
 
   return (
 
     <div>
-    <h1>Compost to Dining</h1>
+       <div className="header">
+        <img src="/vandy-logo.png" alt="Vanderbilt Logo" className="logo" onClick={goToMain} />
+        <div className="header-links">
+    <a href="/menu">Menu</a>
+    <a href="/faq">FAQ</a>
+    <a href="/contact">Contact Us</a>
+  </div>
+  </div>
+      
+    <h1 className='main-header'>Compost to Dining</h1>
     <br></br>
     <img className='icon-dining' src='/dining.png' alt='dining'/>
       
@@ -26,6 +39,7 @@ const Dining = () => {
       
       </div>
       <button className='next' onClick={goToNext}>Go To Next Path</button>
+      <button className='to-main' onClick={goToMain}>Go Back To MainPage</button>
       
     </div>
   );

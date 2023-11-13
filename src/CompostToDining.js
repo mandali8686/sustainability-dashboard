@@ -8,20 +8,43 @@ const CompostToDining = () => {
   const goToDining = () => {
     navigate('/dining'); // Navigate to Electricity page
   };
+  const goToMain = () => {
+    navigate('/main'); // Navigate to Electricity page
+  };
+  
   
 
   return (
     <div>
-      <h1>Vanderbilt Compost</h1>
+      <div className="header">
+        <img src="/vandy-logo.png" alt="Vanderbilt Logo" className="logo" onClick={goToMain} />
+        <div className="header-links">
+    <a href="/menu">Menu</a>
+    <a href="/faq">FAQ</a>
+    <a href="/contact">Contact Us</a>
+  </div>
+  </div>
+      <h1 className='main-header'>Vanderbilt Compost</h1>
       <img className='recycling' src='recycling.png' alt='recycling'/>
       <div className='compost'>
         <h2>What is Compost/Recycling</h2>
-      <h3>Compost</h3>
-      <p>Composting is the natural process of turning organic material into a nutrient-rich soil conditioner, which is a great and sustainable way to recycle kitchen and garden waste. It significantly reduces the amount of waste sent to landfill and provides an excellent soil additive. In the Vanderbilt context, food scraps from dining halls, and organic waste from labs or gardens could be collected and sent to a composting facility.</p>
-      <h3>Recycling</h3>
+      <h3 className='green'>Compost</h3>
+      <ul>
+        <li>Natural process of turning organic material into a nutrient-rich soil conditioner</li>
+        <li>Benefits </li>
+        <ul>
+          <li>Sustainable way to recycle kitchen and garden waste</li>
+          <ul>
+          <li>Significantly reduces the amount of waste sent to landfill</li>
+          </ul>
+          <li>Provides an excellent soil additive</li>
+          </ul>
+          <li>At Vanderbilt, food scraps from dining halls, and organic waste from labs or gardens could be collected and sent to a composting facility</li>
+      </ul>
+      <h3 className='green'>Recycling</h3>
       <p>Recycling involves collecting, processing, and converting waste materials into new products. This reduces the amount of waste that goes to landfills, conserves natural resources, and saves energy. On the Vanderbilt campus, you'll find designated bins for materials like paper, plastic, metal, and glass, which are then collected and sent to recycling centers.</p>
       <h2>Where does Compost/Recycling Go?</h2>
-      <h3>Composting</h3>
+      <h3 className='green'>Composting</h3>
       <h4>On-Campus Facilities: </h4>
       <p>Some universities have their own composting facilities. The composted material may be used on campus gardens and green spaces.</p>
       <h4>Local Farms or Facilities: </h4>
@@ -44,6 +67,8 @@ const CompostToDining = () => {
           <li><strong>Economic Benefits</strong>: Recycling can lead to job creation in the recycling and manufacturing sectors. Composting can boost the agricultural sector by producing high-quality soil additives.</li>
         </ul>
         <button className='next' onClick={goToDining}>Go To Next Path</button>
+        <button className='to-main' onClick={goToMain}>Go Back To MainPage</button>
+      
       </div>
     </div>
   );

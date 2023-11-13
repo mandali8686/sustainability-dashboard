@@ -3,7 +3,7 @@
   }
 
   body {
-    background-image: url('/public/bk.png');
+    background-image: url('/public/bk_img_mit.png');
     background-size:contain; /* Cover the entire screen */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-attachment: fixed; /* Fix the background position */
@@ -12,10 +12,30 @@
   h2,h1 {
     font-family: "Times New Roman", Times, serif;
   }
+
+  .main-header{
+    margin-top: 70px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  text-align: left;
+  font-size: 2.5em; /* Larger font size */
+  font-weight: bold; /* Make the font bolder */
+  color: #333; /* Darker font color for better readability */
+  text-shadow: 2px 2px 4px rgba(38, 110, 62, 0.5); /* Text shadow for depth */
   
+}
+  
+  .instruction{
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 80px;
+    border-bottom: 2px solid #000; /* Custom underline using border-bottom */
+  padding-bottom: 5px; 
+    
+  }
   
   .image-container {
-    width: 80%;
+    width: 100%;
     margin: auto;
   }
   .sankey-link{
@@ -39,6 +59,7 @@
   .sankey-image {
     width: 100%;
     height: auto;
+    position: relative;
   }
   
   .overlay-button-1 {
@@ -143,9 +164,7 @@
     position: relative;
   }
 
-  .main-header{
-    padding:50px;
-  }
+ 
   
   .discussion-board textarea {
     width: 80%;
@@ -175,8 +194,9 @@
   .compost{
     text-align: left;
     margin: auto;
-    margin-left: 205px;
-    width:70%;
+    width: 80%;
+    background-color: white;
+    padding: 30px;
   }
 
   .recycling{
@@ -257,27 +277,106 @@
     margin-right: 20px;
   }
 
-  .next{
-    position: fixed;  /* or 'absolute' depending on your layout */
+  
+  .triangle-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust as needed */
+    margin-left: 80px;
+  }
+  
+  .triangle-wrapper {
+    position: relative;
+    width: 80px; /* Adjust based on the size of your triangle */
+    height: 52px; /* Adjust based on the size of your triangle */
+  }
+  
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent; /* Adjust for size */
+    border-right: 60px solid transparent; /* Adjust for size */
+    border-top: 62px solid black; /* Adjust for size and color */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .triangle-text {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100%; /* Ensure the width matches the triangle wrapper */
+    text-align: center;
+    font-size: 1.17em; /* Equivalent to h3 size */
+    color: white; /* Text color */
+    font-weight: bold;
+  }
+  
+  .preview-electricity,
+.preview-dining{
+  transition: transform 0.3s ease; /* Smooth transition for the transform */
+  transform: scale(1.0); /* Default scale */
+}
+
+/* Hover states for each bubble */
+.overlay-button-1:hover ~ .preview-electricity,
+.overlay-button-3:hover ~ .preview-dining
+{
+  transform: scale(1.1); /* Slightly larger on hover */
+}
+
+  
+.discuss{
+  color: whitesmoke;
+  text-shadow:#ccc,5px;
+  text-align: center;
+  background-color: rgb(2, 71, 2);
+  height: 50px;
+  padding: 13px;
+  margin-top: 25px;
+}
+
+.next{
+  position: fixed;  /* or 'absolute' depending on your layout */
   bottom: 0;
   right: 0;
   margin-top: 30px;
-  margin-bottom: 40%;
-    margin-right: 10px;
-    padding: 10px;
-    background-color: rgb(15, 146, 15);
-    color: white;
-    border-radius: 5%;
-    font-weight: bold;
-    opacity: 70%;
-  }
-  
+  margin-bottom: 50%;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: rgb(15, 146, 15);
+  color: white;
+  border-radius: 15%;
+  font-weight: bold;
+  opacity: 70%;
+}
 
- 
+.to-main{
   
+  position: fixed;  /* or 'absolute' depending on your layout */
+  bottom: 0;
+  right: 0;
+  margin-top: 30px;
+  margin-bottom: 55%;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: rgb(15, 146, 15);
+  color: white;
+  border-radius: 15%;
+  font-weight: bold;
+  opacity: 70%;
+}
 
-  
-  
+.green{
+  color: green;
+}
+
+
   
   
   

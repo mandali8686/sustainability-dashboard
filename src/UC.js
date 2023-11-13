@@ -3,14 +3,23 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of
 
 const UC = () => {
   const navigate = useNavigate(); // Initialize useNavigate
-  const goToNext = () => {
+  const goToMain = () => {
     navigate('/main'); // Navigate to Electricity page
   };
   
   return (
     <div>
-      <h1>University Control of Food Waste</h1>
-      <img className='icon-dining' src='/Vanderbilt-University-Logo.png' alt='food consumption'/>
+       <div className="header">
+        <img src="/vandy-logo.png" alt="Vanderbilt Logo" className="logo" onClick={goToMain} />
+        <div className="header-links">
+    <a href="/menu">Menu</a>
+    <a href="/faq">FAQ</a>
+    <a href="/contact">Contact Us</a>
+  </div>
+  </div>
+      
+      <h1 className='main-header'>University Control of Food Waste</h1>
+      <img className='icon-dining' src='/vandy.png' alt='food consumption'/>
       
       <div className='compost'>
       <h2>Local Sourcing</h2>
@@ -30,8 +39,7 @@ const UC = () => {
           <li>Dining halls are zero waste: 90% landfill diversion </li>
           <li>Excess food is donated to people in need in the community.</li>
         </ul>
-        <img src='landfill.png' className='elec_building' alt='landfill pie'/>
-        <button className='next' onClick={goToNext}>Go Back To MainPage</button>
+        <button className='to-main' onClick={goToMain}>Go Back To MainPage</button>
       
       
       </div>
