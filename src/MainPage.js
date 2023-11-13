@@ -401,6 +401,7 @@ const DiningPreviewBubble = ({ goToDining }) => {
       </div>
       <div className="discussion-board">
         <h2 className='discuss'>Share Your Ideas</h2>
+        <div className='board-comment'>
         <textarea 
           value={newComment} 
           onChange={handleCommentChange}
@@ -414,6 +415,8 @@ const DiningPreviewBubble = ({ goToDining }) => {
             <li key={index}>{comment}</li>
           ))}
         </ul>
+        </div>
+        
       </div>
     </div>
   );

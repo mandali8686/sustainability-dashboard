@@ -177,6 +177,13 @@
     position: relative;
   }
 
+  .board-comment{
+    background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0), lemonchiffon); /* Replace 'anothercolor' with your choice */
+    width: 100%;
+    padding: 20px;
+    margin-left: 0%;
+  }
+
  
   
   .discussion-board textarea {
@@ -194,6 +201,8 @@
     border: none; /* Remove border */
     cursor: pointer; /* Make it look clickable */
     border-radius: 15em;
+    border-color: lemonchiffon;
+    border-width: 2px;
   }
   .comment {
     text-align: left;
@@ -409,6 +418,7 @@ margin-top: 20px;
 
 .submit{
   margin-bottom: 50px;
+  border-color: lemonchiffon;
 }
 
 
