@@ -14,6 +14,8 @@ const [showElectricityPreview, setShowElectricityPreview] = useState(false);
 const [showDiningPreview, setShowDiningPreview] = useState(false);
 const [showFoodConsumptionPreview, setShowFoodConsumptionPreview] = useState(false);
 const [showUCPreview, setShowUCPreview] = useState(false);
+const [showIAPreview, setShowIAPreview] = useState(false);
+
 
   
 
@@ -70,6 +72,18 @@ useEffect(() => {
       <div className="preview-bubble">
         <img className='preview_compost' src='recycling.png' alt='recycling' onClick={goToCompost}/>
         <p style={{ fontSize: '0.7em' }} onClick={goToCompost}>Learn More about Composting at Vanderbilt.</p>
+        
+        {/* Add more preview content here */}
+       
+      </div>
+    );
+  };
+
+  const IAPreviewBubble = ({goToIndividual}) => {
+    return (
+      <div className="preview-bubble">
+        <img className='preview_compost' src='inid.png' alt='recycling' onClick={goToCompost}/>
+        <p style={{ fontSize: '0.7em' }} onClick={goToIndividual}>Learn More about Individual Actions.</p>
         
         {/* Add more preview content here */}
        
@@ -137,6 +151,33 @@ const DiningPreviewBubble = ({ goToDining }) => {
   const UCPreviewBubbleHoverStyle = {
     position: 'absolute',
     top: '44%', 
+    left: '73%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 1,
+
+  };
+
+  const IAPreviewBubbleStyle = {
+    position: 'absolute',
+    top: '60%', 
+    left: '73%', 
+    zIndex: 1,
+    backgroundColor: '#f9f9f9',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+    width: '100px',
+    opacity: 0.7,
+  };
+
+  const IAPreviewBubbleHoverStyle = {
+    position: 'absolute',
+    top: '60%', 
     left: '73%', 
     zIndex: 1,
     backgroundColor: '#f9f9f9',
@@ -386,13 +427,19 @@ const DiningPreviewBubble = ({ goToDining }) => {
         >
           Food Consumption to Univerisity Control
         </button>
-        
+        <div onClick={goToIndividual}
+  style={showIAPreview ? IAPreviewBubbleHoverStyle : IAPreviewBubbleStyle} 
+  onMouseEnter={() => setShowIAPreview(true)}
+  onMouseLeave={() => setShowIAPreview(false)}
+>
+  <IAPreviewBubble goToIndividual={goToIndividual} />
+</div>
         <button 
           className="overlay-button-7" 
           style={{ top: '62%', left: '77%' }} 
           onClick={goToIndividual} // Set onClick to navigate
-          onMouseEnter={() => setShowUCPreview(true)}
-  onMouseLeave={() => setShowUCPreview(false)}
+          onMouseEnter={() => setShowIAPreview(true)}
+  onMouseLeave={() => setShowIAPreview(false)}
 
         >
           Individual Actions
